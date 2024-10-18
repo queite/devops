@@ -105,3 +105,15 @@ Container isolado.
 
 
 [Format command and log output](https://docs.docker.com/engine/cli/formatting/)
+
+# Comandos
+
+`docker system prune -a`
+
+![alt text]({E0CF9F31-EB1B-4F74-9B9C-2298288E9E1F}.png)
+
+# Segurança:
+![alt text]({12DEAF41-7CBA-4055-9B7C-9BFD2C9784EE}.png)
+
+1. Evitar expor o usuário root
+2.
