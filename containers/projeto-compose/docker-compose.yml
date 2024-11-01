@@ -1,4 +1,7 @@
+version: "3.8"
+
 services:
+
   db:
     build:
       context: ./db
@@ -6,17 +9,21 @@ services:
     container_name: database-mongo
     ports:
       - "27017:27017"
+    networks:
+      - app-node-net
+
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: backend
-    volumes:
-      - ./backend:/backend
     ports:
       - "3000:3000"
+    networks:
+      - app-node-net
     depends_on:
       - db
+
   frontend:
     build:
       context: ./frontend
@@ -25,6 +32,12 @@ services:
     volumes:
       - ./frontend:/usr/share/nginx/html
     ports:
-      - "8080:80"
+      - "80:80"
+    networks:
+      - app-node-net
     depends_on:
       - backend
+
+networks:
+  app-node-net:
+    driver: bridge
