@@ -6,6 +6,11 @@ terraform {
       version = ">=5.74.0"
     }
   }
+  backend "s3" { #salva o state do terraform no bucket (compartilhamento de state)
+    bucket = "terraform-back-ada"
+    key    = "state/terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {

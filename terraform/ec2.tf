@@ -15,10 +15,10 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ec2-a" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.app-ada.id]
-  subnet_id = aws_subnet.private-a.id
+  subnet_id              = aws_subnet.private-a.id
 
   tags = {
     Name = "ec2-a"
@@ -26,10 +26,10 @@ resource "aws_instance" "ec2-a" {
 }
 
 resource "aws_instance" "ec2-b" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.app-ada.id]
-  subnet_id = aws_subnet.private-b.id
+  subnet_id              = aws_subnet.private-b.id
 
   tags = {
     Name = "ec2-b"
@@ -37,10 +37,10 @@ resource "aws_instance" "ec2-b" {
 }
 
 resource "aws_instance" "ec2-c" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.app-ada.id]
-  subnet_id = aws_subnet.private-c.id
+  subnet_id              = aws_subnet.private-c.id
 
   tags = {
     Name = "ec2-c"
